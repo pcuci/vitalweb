@@ -29,15 +29,29 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" href="#">Dr. So-and-so</a>
         </div>
       </div>
     </nav>
 
     <div class="jumbotron">
       <div class="container">
-        <h1>New Visit</h1>
-        <p>What happened at the Dr. visit goes here</p>
+        <h2>Add a Visit - Patient X</h2>
+        Date of Birth: 01/01/2000<br>
+        Diagnosis: Some diagnosis<br>
+        <form>
+          <div class="form-group">
+            <label for="action">Visit Activity</label>
+            <select name='action' class="form-control">
+              <option>Follow up</option>
+            </select>          
+          </div>
+          <div class="form-group">
+            <label for="notes">Notes</label>
+            <textarea class="form-control" name='notes'></textarea>
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
       </div>
     </div>
 
