@@ -1,4 +1,14 @@
 $(document).ready(function() {
+    var exampleSocket = new WebSocket('ws://localhost:4000/echo');
+    exampleSocket.onopen = function (event) {
+        exampleSocket.send('Ping');
+    }
+    exampleSocket.onmessage = function (event) {
+        console.log("Received", event.data);
+    }
+    function showEpisodePopup(notes, title) {
+        $('#episode-dialog').modal('show');
+    };
     function getData() {
         return new Promise(function(fulfill, reject) {
             $('#clinical tbody').empty();
@@ -34,7 +44,7 @@ $(document).ready(function() {
                     if( buttonShown ) row = $('<tr><td></td><td>'+visit.procedure+'</td><td></td><td></td><td></td></tr>').addClass('future');
                     else {
                         row = row = $('<tr><td align=center><button>Add</button></td><td>'+visit.procedure+'</td><td></td><td></td><td></td></tr>').addClass('next');
-                        buttonShown = true;                    
+                        buttonShown = true;
                         row.find('button').click(function() {
                             var title = 'Upload CCD for '+visit.procedure;
                             $('#procedure-title').text(title);
@@ -44,16 +54,58 @@ $(document).ready(function() {
                 }
                 $('#clinical tbody').append(row);
             });
+            $('#population tbody').empty();
+            var episodesCosts = [];
+            var populationCost = 0;
+            var noEpisodes = 10;
+            for (i = 0; i < noEpisodes; i++) {
+                episodesCosts.push(Math.floor(1000 + Math.random() * 9000));
+                populationCost += episodesCosts[i];
+            }
+            averageEpisodeCost = populationCost / noEpisodes;
+            _.forEach(episodesCosts, function (episodeCost) {
+                var memberId = Math.floor(100000 + Math.random() * 900000);
+                var providerId = Math.floor(1000000 + Math.random() * 9000000);
+                var diff = episodeCost - averageEpisodeCost;
+                var row = $('<tr><td>'+memberId+'</td><td>'+providerId+'</td><td>'+accounting.formatMoney(episodeCost, {
+                  precision: 2,
+                  thousand: ",",
+                  format: {
+                    pos : "%s %v",
+                    neg : "%s (%v)",
+                    zero: "%s  --"
+                  }
+                })+'</td><td ' + ((diff > 0) ? 'class="positive"' : 'class="negative"') + '>'+accounting.formatMoney(diff, {
+                  precision: 2,
+                  thousand: ",",
+                  format: {
+                  pos : "%s %v",
+                  neg : "%s (%v)",
+                  zero: "%s  --"
+                  }
+                })+'</td></tr>');
+                row.click(function() {
+                    showEpisodePopup();
+                }).addClass('clickable');
+                $('#population tbody').append(row);
+            });
+            $('#episode-dialog .modal-body table tbody').empty();
+            var popupRows = $('#clinical').find('.completed').clone();
+            $('#episode-dialog .modal-body').append('<table class="table table-striped table-bordered"></table>');
+            var popupTable = $('#episode-dialog table');
+            popupTable.append($('#clinical').find('thead').clone());
+            popupTable.append('<tbody></tbody>').append(popupRows);
         });
     }
     function doUpload() {
         update();
     }
-    
+
     function showPopup(notes, title) {
         $('#notes-title').text(title);
         $('#notes').text(notes);
         $('#notes-dialog').modal('show');
+
     };
     $('#drop-target').on('dragenter', function() {
         $('#drop-target').css('border-style', 'solid');
@@ -66,7 +118,7 @@ $(document).ready(function() {
     });
     var stopIt = function(e) {
         e.preventDefault();
-        e.stopPropagation();        
+        e.stopPropagation();
         return false;
     }
     $(window).on("drag dragstart dragend dragover dragenter dragleave drop", stopIt);

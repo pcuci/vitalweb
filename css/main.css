@@ -1,8 +1,22 @@
+tr.next button {
+  line-height: 12px;
+  width: 100%;
+}
 
+tr.completed, tr.clickable {
+  cursor: pointer;
+}
 
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
+td.positive {
+  color: green;
+  font-weight: bold;
+}
+
+td.negative {
+  color: red;
+  font-weight: bold;
+}
+
 .upload-area {
 	padding: 48px;
 	text-align: center;
