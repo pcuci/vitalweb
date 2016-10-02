@@ -26,6 +26,20 @@ $(document).ready(function() {
         $('#notes-dialog').modal('show');
 
     };
+    $('#drop-target').on('dragenter', function() {
+        $('#drop-target').css('border-style', 'solid');
+    }).on('dragleave', function() {
+        $('#drop-target').css('border-style', 'dashed');
+    }).on('drop', function(ev) {
+        ev.preventDefault();
+        $('#procedure-dialog').modal('hide');
+    });
+    var stopIt = function(e) {
+        e.preventDefault();
+        e.stopPropagation();        
+        return false;
+    }
+    $(window).on("drag dragstart dragend dragover dragenter dragleave drop", stopIt);
     getData().then(function(data) {
         $('#clinical tbody').empty();
         var buttonShown = false;
