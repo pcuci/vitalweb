@@ -29,38 +29,22 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Dr. Bones Orthopaedics</a>
+          <a class="navbar-brand" href="#">Bones Orthopaedics - Michael Bones, MD</a>
         </div>
       </div>
     </nav>
 
     <div class="jumbotron">
       <div class="container">
-        <h1>Elective Hip Replacement</h1>
-        <h2>Patient <strong>Joe Ziggeler</strong></h2>
+        <h3>Joe Ziggeler: Elective Hip Replacement</h3>
         Date of Birth: 01/01/2000<br>
         Bundle: Hip Replacement<br>
         Diagnosis Date: 1/1/2017<br>
-        <br>
-        <form>
-          <div class="form-group">
-            <label for="action">Visit Activity</label>
-            <select name='action' class="form-control">
-              <option>Follow up</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="notes">Notes</label>
-            <textarea class="form-control" name='notes'></textarea>
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
       </div>
     </div>
 
     <div class="container">
       <div class="row">
-        <h2>Dr. view episode based</h2>
         <div class="col-xs-12">
           <table id="clinical" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
@@ -85,7 +69,27 @@
       </div>
       
 
-<!-- Modal -->
+<!-- Modals -->
+<div class="modal fade" id="procedure-dialog" tabindex="-1" role="dialog" aria-labelledby="procedure-title">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="procedure-title"></h4>
+      </div>
+      <div class="modal-body" id='notes'>
+      <form>
+        <textarea style="width: 100%; height: 200px" id='procedure-notes'></textarea>
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Add Procedure</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="modal fade" id="notes-dialog" tabindex="-1" role="dialog" aria-labelledby="notes-title">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -94,7 +98,6 @@
         <h4 class="modal-title" id="notes-title"></h4>
       </div>
       <div class="modal-body" id='notes'>
-      This is a test.
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

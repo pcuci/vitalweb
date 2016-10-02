@@ -4,45 +4,45 @@
       "date": "2011/04/25",
       "name": "Joe Ziggeler",
       "notes": "Doing great, gave new meds, alergies galore",
-      "provider": "Bones Orthopaedics",
+      "provider": "Michael Bones MD",
       "procedure": "Evaluation & Management",
-      "practice": "Michael Bones MD",
+      "practice": "Bones Orthopaedics",
       "specialty": "Orthopaedic surgery",
       "priority": 1
     }, {
       "date": "2011/05/05",
       "name": "Joe Ziggeler",
-      "notes": "Rough start. Will need more PT",
-      "provider": "Select Physical Therapy",
+      "notes": "Range of movement: 50 degrees",
+      "provider": "Dom Delaney DPT",
       "procedure": "Physical Therapy Evaluation",
-      "practice": "Dom Delaney DPT",
+      "practice": "Select Physical Therapy",
       "specialty": "Physical Therapy",
       "priority": 2
     }, {
       "date": "2011/05/21",
       "name": "Joe Ziggeler",
-      "notes": "No progress. Aint nobody got time for that. Time for injection.",
-      "provider": "Select Physical Therapy",
+      "notes": "Squats, hip flexor streches",
+      "provider": "Richard Sanchez DPT",
       "procedure": "Therapeutic Exercise",
-      "practice": "Dom Delaney DPT",
+      "practice": "Select Physical Therapy",
       "specialty": "Physical Therapy",
       "priority": 3
     }, {
       "date": "2011/05/26",
       "name": "Joe Ziggeler",
       "notes": "Injection complete. Follow up in 5 days.",
-      "provider": "Bones Orthopaedics",
+      "provider": "Michael Bones MD",
       "procedure": "Intra-articular Injection",
-      "practice": "Michael Bones MD",
+      "practice": "Bones Orthopaedics",
       "specialty": "Orthopaedic Surgery",
       "priority": 4
      }, {
       "date": "2011/05/31",
       "name": "Joe Ziggeler",
       "notes": "Surgery Consult: Surg fo sho",
-      "provider": "Bones Orthopaedics",
+      "provider": "Michael Bones MD",
       "procedure": "Evaluation & Management",
-      "practice": "Michael Bones MD",
+      "practice": "Bones Orthopaedics",
       "specialty": "Orthopaedic Surgery",
       "priority": 5
      }, {

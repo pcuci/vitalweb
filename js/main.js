@@ -21,16 +21,27 @@ $(document).ready(function() {
     };
     getData().then(function(data) {
         $('#clinical tbody').empty();
+        var buttonShown = false;
         _.each(data.data, function(visit) {
+            var row;
             if( visit.date !== null ) {
-                var row = $('<tr><td>'+visit.date+'</td><td>'+visit.procedure+'</td><td>'+visit.provider+'</td><td>'+visit.practice+'</td><td>'+visit.specialty+'</td></tr>');
+                row = $('<tr><td align=center>'+visit.date+'</td><td>'+visit.procedure+'</td><td>'+visit.provider+'</td><td>'+visit.practice+'</td><td>'+visit.specialty+'</td></tr>');
                 row.click(function() {
                     var notes = visit.notes;
-                    var title = visit.date+' - '+visit.procedure
+                    var title = visit.date+' - '+visit.procedure;
                     showPopup(notes, title);
                 });
             } else {
-                var row = $('<tr><td></td><td>'+visit.procedure+'</td><td></td><td></td><td></td></tr>');
+                if( buttonShown ) row = $('<tr><td></td><td>'+visit.procedure+'</td><td></td><td></td><td></td></tr>');
+                else {
+                    row = row = $('<tr><td align=center><button>Add</button></td><td>'+visit.procedure+'</td><td></td><td></td><td></td></tr>');
+                    buttonShown = true;                    
+                    row.find('button').click(function() {
+                        var title = 'Add Notes for '+visit.procedure;
+                        $('#procedure-title').text(title);
+                        $('#procedure-dialog').modal('show');
+                    });
+                }
             }
             $('#clinical tbody').append(row);
         });
