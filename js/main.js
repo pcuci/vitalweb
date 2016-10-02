@@ -37,14 +37,14 @@ $(document).ready(function() {
                     var notes = visit.notes;
                     var title = visit.date+' - '+visit.procedure;
                     showPopup(notes, title);
-                });
+                }).addClass('completed');
             } else {
-                if( buttonShown ) row = $('<tr><td></td><td>'+visit.procedure+'</td><td></td><td></td><td></td></tr>');
+                if( buttonShown ) row = $('<tr><td></td><td>'+visit.procedure+'</td><td></td><td></td><td></td></tr>').addClass('future');
                 else {
-                    row = row = $('<tr><td align=center><button>Add</button></td><td>'+visit.procedure+'</td><td></td><td></td><td></td></tr>');
+                    row = row = $('<tr><td align=center><button>Add</button></td><td>'+visit.procedure+'</td><td></td><td></td><td></td></tr>').addClass('next');
                     buttonShown = true;                    
                     row.find('button').click(function() {
-                        var title = 'Add Notes for '+visit.procedure;
+                        var title = 'Upload CCD for '+visit.procedure;
                         $('#procedure-title').text(title);
                         $('#procedure-dialog').modal('show');
                     });
