@@ -1,4 +1,11 @@
 $(document).ready(function() {
+    var exampleSocket = new WebSocket('ws://localhost:4000/echo');
+    exampleSocket.onopen = function (event) {
+        exampleSocket.send('Ping');
+    }
+    exampleSocket.onmessage = function (event) {
+        console.log("Received", event.data);
+    }
     function getData() {
         return new Promise(function(fulfill, reject) {
             $.ajax({
@@ -17,7 +24,7 @@ $(document).ready(function() {
         $('#notes-title').text(title);
         $('#notes').text(notes);
         $('#notes-dialog').modal('show');
-        
+
     };
     getData().then(function(data) {
         $('#clinical tbody').empty();
