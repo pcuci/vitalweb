@@ -9,8 +9,7 @@
       "practice": "Michael Bones MD",
       "specialty": "Orthopaedic surgery",
       "priority": 1
-    },
-    {
+    }, {
       "date": "2011/05/05",
       "name": "Joe Ziggeler",
       "notes": "Rough start. Will need more PT",
@@ -19,8 +18,7 @@
       "practice": "Dom Delaney DPT",
       "specialty": "Physical Therapy",
       "priority": 2
-    },
-    {
+    }, {
       "date": "2011/05/21",
       "name": "Joe Ziggeler",
       "notes": "No progress. Aint nobody got time for that. Time for injection.",
@@ -29,8 +27,7 @@
       "practice": "Dom Delaney DPT",
       "specialty": "Physical Therapy",
       "priority": 3
-    },
-     {
+    }, {
       "date": "2011/05/26",
       "name": "Joe Ziggeler",
       "notes": "Injection complete. Follow up in 5 days.",
@@ -39,8 +36,7 @@
       "practice": "Michael Bones MD",
       "specialty": "Orthopaedic Surgery",
       "priority": 4
-     },
-     {
+     }, {
       "date": "2011/05/31",
       "name": "Joe Ziggeler",
       "notes": "Surgery Consult: Surg fo sho",
@@ -49,8 +45,7 @@
       "practice": "Michael Bones MD",
       "specialty": "Orthopaedic Surgery",
       "priority": 5
-     },
-     {
+     }, {
       "date": null,
       "name": "Joe Ziggeler",
       "notes": null,
@@ -59,8 +54,7 @@
       "practice": "Michael Bones MD",
       "specialty": "Orthopaedic Surgery",
       "priority": 6
-     },
-      {
+    }, {
       "date": null,
       "name": "Joe Ziggeler",
       "notes": null,
@@ -69,8 +63,7 @@
       "practice": null,
       "specialty": "Physical Therapy",
       "priority": 7
-      },
-        {
+    }, {
       "date": null,
       "name": "Joe Ziggeler",
       "notes": null,
@@ -79,5 +72,6 @@
       "practice": null,
       "specialty": "Physical Therapy",
       "priority": 8
+    }
   ]
 }
