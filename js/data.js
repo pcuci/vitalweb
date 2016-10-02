@@ -72,7 +72,6 @@
       "practice": null,
       "specialty": "Physical Therapy",
       "priority": 8
->>>>>>> d849eb14950499a51e852ce0a391f2cbf8efd960
     }
   ]
 }
